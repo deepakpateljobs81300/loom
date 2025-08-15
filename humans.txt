@@ -1,0 +1,14 @@
+/* TEAM */
+Developer: Deepak Patel
+Company: Loom Laundry
+Website: https://www.loomlaundry.com
+Location: Noida & Ghaziabad, India
+
+/* THANKS */
+Built using HTML, CSS, JavaScript, and Spring Boot
+Hosted on AWS EC2
+
+/* SITE */
+Last update: 2025-04-10
+Standards: HTML5, CSS3
+Language: English
