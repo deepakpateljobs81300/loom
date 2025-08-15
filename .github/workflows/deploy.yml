@@ -1,0 +1,49 @@
+name: Deploy to EC2 with Backup
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set deployment timestamp
+      id: vars
+      run: echo "DEPLOY_FOLDER=loom_$(date +'%Y_%m_%d_%H%M')" >> $GITHUB_ENV
+
+    - name: Upload files to EC2 backup folder
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.AWS_PEM_KEY }}
+        source: "./*"
+        target: "/home/ubuntu/${{ env.DEPLOY_FOLDER }}/"
+
+    - name: Deploy to Nginx folder with backup
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.AWS_PEM_KEY }}
+        script: |
+          echo "Clearing old website files..."
+          sudo rm -rf /var/www/html/*
+
+          echo "Moving new deployment to web root..."
+          sudo cp -r /home/ubuntu/${{ env.DEPLOY_FOLDER }}/* /var/www/html/
+
+          echo "Saving backup copy..."
+          sudo mkdir -p /home/ubuntu/backups
+          sudo cp -r /home/ubuntu/${{ env.DEPLOY_FOLDER }} /home/ubuntu/backups/
+
+          echo "Cleaning up old backups (keep last 5)..."
+          cd /home/ubuntu/backups && sudo ls -t | tail -n +6 | xargs sudo rm -rf || true
+
+          echo "Deployment complete!"
