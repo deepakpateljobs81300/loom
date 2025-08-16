@@ -25,6 +25,8 @@ jobs:
         key: ${{ secrets.AWS_PEM_KEY }}
         source: "./*"
         target: "/home/ubuntu/${{ env.DEPLOY_FOLDER }}/"
+        timeout: 240s
+        command_timeout: 20m
 
     - name: Deploy to Nginx folder with backup
       uses: appleboy/ssh-action@v1.0.0
