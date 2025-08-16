@@ -85,6 +85,23 @@
         <link rel="stylesheet" href="css/responsive.css">
 		
     </head>
+    	<script>
+		fetch('/partials/header.html')
+		  .then(response => response.text())
+		  .then(data => {
+			document.getElementById('header-placeholder').innerHTML = data;
+		  })
+		  .catch(error => console.error('Error loading header:', error));
+	</script>
+	<script>
+	  fetch('/partials/footer.html')
+		.then(response => response.text())
+		.then(data => {
+		  document.getElementById('footer-placeholder').innerHTML = data;
+		})
+		.catch(error => console.error('Error loading footer:', error));
+	</script>		  
+    	<script src="js/header-blogs.js"></script>	  		  
     <body>
 	
 		<!-- Preloader -->
@@ -120,89 +137,7 @@
 		</ul>
 	
 		<!-- Header Area -->
-		<header class="header" >
-			<!-- Topbar -->
-			<div class="topbar">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6 col-md-5 col-12">
-							<!-- Contact -->
-							<ul class="top-link">
-								<li><a href="laundry-dry-cleaning-noida-ghaziabad.html#about-id">About</a></li>
-								<li><a href="laundry-dry-cleaning-noida-ghaziabad.html#service-id">Services</a></li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-							<!-- End Contact -->
-						</div>
-						<div class="col-lg-6 col-md-7 col-12">
-							<!-- Top Contact -->
-							<ul class="top-contact">
-								<li><i class="fa fa-phone"></i>+91 87997 49101</li>
-								<li><i class="fa fa-envelope"></i><a href="mailto:support@loomlaundry.com">support@loomlaundry.com</a></li>
-							</ul>
-							<!-- End Top Contact -->
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End Topbar -->
-			<!-- Header Inner -->
-			<div class="header-inner">
-				<div class="container">
-					<div class="inner">
-						<div class="row">
-							<div class="col-lg-3 col-md-3 col-12">
-								<!-- Start Logo -->
-								<div class="logo">
-									<a href="laundry-dry-cleaning-noida-ghaziabad.html"><img src="img/logo.svg" width="189" height="38" alt="Logo"></a>
-								</div>
-								<!-- End Logo -->
-								<!-- Mobile Nav -->
-								<div class="mobile-nav"></div>
-								<!-- End Mobile Nav -->
-							</div>
-							<div class="col-lg-7 col-md-9 col-12">
-								<!-- Main Menu -->
-								<div class="main-menu">
-									<nav class="navigation">
-										<ul class="nav menu">
-											<li class="active"><a href="#">Home</a>
-												<!-- <ul class="dropdown">
-													<li><a href="laundry-dry-cleaning-noida-ghaziabad.html">Home Page 1</a></li>
-												</ul> -->
-											</li>
-											<li><a href="laundry-dry-cleaning-noida-ghaziabad.html#about-id">About </a></li>											
-											<li><a href="laundry-dry-cleaning-noida-ghaziabad.html#service-id">Services </a></li>
-											<li><a href="laundry-drycleaning-price-noida-ghaziabad.html">Price</a>
-												<!-- <ul class="dropdown">
-													<li><a href="404.html">404 Error</a></li>
-												</ul> -->
-											</li>
-											<li><a href="fabric-care-laundry-tips-noida-ghaziabad.html">Blogs</a>
-												<ul class="dropdown">
-													<li><a href="fabric-care-laundry-tips-noida-ghaziabad.html">Fabric Care Tips</a></li>
-													<li><a href="eco-friendly-dry-cleaning-noida-ghaziabad.html">Eco-Friendly Dry Cleaning</a></li>
-													<li><a href="bed-linen-care-tips-noida-laundry.html">Bed Linen Care</a></li>
-												</ul>
-											</li>
-
-											<li><a href="contact.html">Contact Us</a></li>
-										</ul>
-									</nav>
-								</div>
-								<!--/ End Main Menu -->
-							</div>
-							<div class="col-lg-2 col-12">
-								<div class="get-quote">
-									<a href="laundry-dry-cleaning-noida-ghaziabad.html#book-id" class="btn">Book Now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/ End Header Inner -->
-		</header>
+		<div id="header-placeholder"></div>
 		<!-- End Header Area -->
 	
 		<!-- Breadcrumbs -->
@@ -277,84 +212,7 @@
 		<!-- End Portfolio Details Area -->
 		
 		<!-- Footer Area -->
-		<footer id="footer" class="footer ">
-			<!-- Footer Top -->
-			<div class="footer-top">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer">
-								<h2>About Us</h2>
-								<p>Loom Laundry offers premium dry cleaning and laundry services with hassle-free pickup & delivery, and affordable pricing. </p>
-								<!-- Social -->
-								<ul class="social">
-									<<li><a href="https://www.instagram.com/loom.laundry/"><i class="icofont-instagram"></i></a></li>
-									<li><a href="#"><i class="icofont-facebook"></i></a></li>
-									<li><a href="https://wa.me/+918799749101"><i class="icofont-whatsapp"></i></a></li>
-								</ul>
-								<!-- End Social -->
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer f-link">
-								<h2>Quick Links</h2>
-								<div class="row">
-									<div class="col-lg-6 col-md-6 col-12">
-										<ul>
-											<li><a href="laundry-dry-cleaning-noida-ghaziabad.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
-											<li><a href="laundry-dry-cleaning-noida-ghaziabad.html#about-id"><i class="fa fa-caret-right" aria-hidden="true"></i>About</a></li>
-											<li><a href="laundry-dry-cleaning-noida-ghaziabad.html#service-id"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
-											<li><a href="laundry-drycleaning-price-noida-ghaziabad.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Price</a></li>
-										</ul>
-									</div>
-									<div class="col-lg-6 col-md-6 col-12">
-										<ul>
-											<li><a href="fabric-care-laundry-tips-noida-ghaziabad.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Blogs</a></li>
-											<li><a href="contact.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>
-											<li><a href="laundry-dry-cleaning-noida-ghaziabad.html#book-id"><i class="fa fa-caret-right" aria-hidden="true"></i>Book Now</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer">
-								<h2>Open Hours</h2>
-								<p>We’re open all week to keep your clothes clean and fresh! </p>
-								<ul class="time-sidual">
-									<li class="day">Monday - Sunday <span>8.00-21.00</span></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer">
-								<h2>Newsletter</h2>
-								<p>Subscribe to our newsletter for exclusive discounts, laundry tips, and the latest updates. Stay fresh with Loom Laundry! </p>
-								<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-									<input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''"
-										onblur="this.placeholder = 'Your email address'" required="" type="email">
-									<button class="button"><i class="icofont icofont-paper-plane"></i></button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/ End Footer Top -->
-			<!-- Copyright -->
-			<div class="copyright">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-12">
-							<div class="copyright-content">
-								<p>© Copyright 2025  |  All Rights Reserved by <a href="https://www.loomlaundry.com" target="_blank">loomlaundry.com</a> </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/ End Copyright -->
-		</footer>
+		<div id="footer-placeholder"></div>
 		<!--/ End Footer Area -->
 		
 		<!-- jquery Min JS -->
